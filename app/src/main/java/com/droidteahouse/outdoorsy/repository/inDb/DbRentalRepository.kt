@@ -42,7 +42,7 @@ import kotlin.coroutines.CoroutineContext
  * Repository implementation that uses a database PagedList + a boundary callback to return a
  * listing that loads in pages.
  */
-class DbGiveRepository(
+class DbRentalRepository(
         val db: RentalsDatabase,
         private val webService: RentalService,
         private var boundaryCallback: BoundaryCallback
@@ -54,7 +54,7 @@ class DbGiveRepository(
 
     companion object {
 
-        private val TAG = DbGiveRepository::class.java.canonicalName
+        private val TAG = DbRentalRepository::class.java.canonicalName
     }
 
     /**
