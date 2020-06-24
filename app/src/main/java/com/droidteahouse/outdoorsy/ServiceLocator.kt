@@ -26,7 +26,7 @@ import androidx.savedstate.SavedStateRegistryOwner
 import com.droidteahouse.outdoorsy.api.RentalService
 import com.droidteahouse.outdoorsy.repository.RentalRepository
 import com.droidteahouse.outdoorsy.repository.inDb.BoundaryCallback
-import com.droidteahouse.outdoorsy.repository.inDb.DbGiveRepository
+import com.droidteahouse.outdoorsy.repository.inDb.DbRentalRepository
 import com.droidteahouse.outdoorsy.ui.RentalViewModel
 import com.example.android.codelabs.paging.db.RentalsDatabase
 import java.util.concurrent.Executor
@@ -97,8 +97,8 @@ open class DefaultServiceLocator(val app: Application) : ServiceLocator {
             ioExecutor = getDiskIOExecutor(),
             networkPageSize = 10)
 
-    override fun getRepository(): DbGiveRepository {
-        return DbGiveRepository(
+    override fun getRepository(): DbRentalRepository {
+        return DbRentalRepository(
                 db = db,
                 webService = getGiveApi(),
                 boundaryCallback = boundaryCallback)

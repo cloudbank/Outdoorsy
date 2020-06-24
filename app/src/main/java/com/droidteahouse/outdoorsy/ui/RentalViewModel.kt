@@ -62,7 +62,7 @@ class RentalViewModel(
             return false
         }
         savedStateHandle.set(CATEGORY_KEY, category)
-        refresh(category)
+
         return true
     }
 
